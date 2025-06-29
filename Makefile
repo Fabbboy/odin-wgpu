@@ -2,6 +2,7 @@ ODIN ?= $(shell which odin)
 ODIN_FLAGS := 
 
 SED := $(shell which sed)
+GIT := $(shell which git)
 
 WORK_DIR := $(shell pwd)
 OCBINDGEN_DIR := $(WORK_DIR)/odin-c-bindgen
@@ -10,15 +11,15 @@ WGPU_DIR := $(WORK_DIR)/wgpu-native
 ODINGEN := $(WORK_DIR)/odin-gen.exe
 ODIN_FLAGS += $(OCBINDGEN_DIR)/src -out:$(ODINGEN)
 
-TEMPL_FILE := $(WORK_DIR)/bindings.sjson.templ 
-BINDINGS_OUT := $(WORK_DIR)/bindings.sjson
+TEMPL_FILE := $(WORK_DIR)/bindgen.sjson.templ 
+BINDINGS_OUT := $(WORK_DIR)/bindgen.sjson
 
 WGPU_HEADER := $(WGPU_DIR)/ffi/wgpu.h
 WEBGPU_HEADER := $(WGPU_DIR)/ffi/webgpu-headers/webgpu.h
 
-.PHONY: all template bindgen clean
+.PHONY: all submodule template bindgen clean
 
-all: $(ODINGEN) template bindgen
+all: submodule $(ODINGEN) template bindgen
 
 $(ODINGEN): $(OCBINDGEN_DIR)
 	$(ODIN) build $(ODIN_FLAGS)
@@ -30,3 +31,7 @@ template: $(TEMPL_FILE) $(WGPU_HEADER) $(WEBGPU_HEADER)
 
 bindgen: $(ODINGEN) $(BINDINGS_OUT)
 	$(ODINGEN) $(WORK_DIR)
+
+submodule:
+	$(GIT) submodule update --init --recursive
+	
