@@ -1,7 +1,7 @@
-when ODIN_OS == "linux" {
+when ODIN_OS == .Linux {
   foreign import lib "@LIB_FILE@"
-} else when ODIN_OS == "macos" {
+} else when ODIN_OS == .Darwin || ODIN_OS == .FreeBSD || ODIN_OS == .OpenBSD {
   foreign import lib "@LIB_FILE@"
-} else when ODIN_OS == "windows" {
+} else when ODIN_OS == .Windows {
   foreign import lib "@LIB_FILE@"
 }
