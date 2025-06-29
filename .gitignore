@@ -1,4 +1,32 @@
+# Build outputs
 *.exe
+*.bin
+
+foreign.odin
+
+# Generated files
 *.sjson
-wgpu/
-*.odin
+
+# Library files
+*.lib
+*.so 
+*.a
+*.dylib
+*.dll
+*.o
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

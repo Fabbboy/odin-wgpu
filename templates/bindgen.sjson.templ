@@ -7,7 +7,7 @@ output_folder = "wgpu"
 package_name = "wgpu"
 imports_file = "@ODIN_FORGEIN_OUT@"
 
-force_ada_case_types = true
+// force_ada_case_types = true
 
 remove_function_prefix = "wgpu"
 remove_type_prefix = "WGPU"
@@ -17,6 +17,53 @@ clang_include_paths = [
   "@WEBPU_DIR@"
 ]
 
+opaque_types = [
+  "WGPUAdapterImpl",
+  "WGPUBindGroupImpl",
+  "WGPUBindGroupLayoutImpl",
+  "WGPUBufferImpl",
+  "WGPUCommandBufferImpl",
+  "WGPUCommandEncoderImpl",
+  "WGPUComputePassEncoderImpl",
+  "WGPUComputePipelineImpl",
+  "WGPUDeviceImpl",
+  "WGPUInstanceImpl",
+  "WGPUPipelineLayoutImpl",
+  "WGPUQuerySetImpl",
+  "WGPUQueueImpl",
+  "WGPURenderBundleImpl",
+  "WGPURenderBundleEncoderImpl",
+  "WGPURenderPassEncoderImpl",
+  "WGPURenderPipelineImpl",
+  "WGPUSamplerImpl",
+  "WGPUShaderModuleImpl",
+  "WGPUSurfaceImpl",
+  "WGPUTextureImpl",
+  "WGPUTextureViewImpl"
+]
+
 type_overrides = {
-	"WGPUProc" = "proc \"c\" ()"
+  "WGPUAdapter" = "^AdapterImpl",
+  "WGPUBindGroup" = "^BindGroupImpl",
+  "WGPUBindGroupLayout" = "^BindGroupLayoutImpl",
+  "WGPUBuffer" = "^BufferImpl",
+  "WGPUCommandBuffer" = "^CommandBufferImpl",
+  "WGPUCommandEncoder" = "^CommandEncoderImpl",
+  "WGPUComputePassEncoder" = "^ComputePassEncoderImpl",
+  "WGPUComputePipeline" = "^ComputePipelineImpl",
+  "WGPUDevice" = "^DeviceImpl",
+  "WGPUInstance" = "^InstanceImpl",
+  "WGPUPipelineLayout" = "^PipelineLayoutImpl",
+  "WGPUQuerySet" = "^QuerySetImpl",
+  "WGPUQueue" = "^QueueImpl",
+  "WGPURenderBundle" = "^RenderBundleImpl",
+  "WGPURenderBundleEncoder" = "^RenderBundleEncoderImpl",
+  "WGPURenderPassEncoder" = "^RenderPassEncoderImpl",
+  "WGPURenderPipeline" = "^RenderPipelineImpl",
+  "WGPUSampler" = "^SamplerImpl",
+  "WGPUShaderModule" = "^ShaderModuleImpl",
+  "WGPUSurface" = "^SurfaceImpl",
+  "WGPUTexture" = "^TextureImpl",
+  "WGPUTextureView" = "^TextureViewImpl",
+  "WGPUProc" = "proc \"c\" ()"
 }
