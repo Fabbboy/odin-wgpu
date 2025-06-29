@@ -11,6 +11,7 @@ WGPU_DIR := $(WORK_DIR)/wgpu-native
 WGPU_FFI_DIR := $(WGPU_DIR)/ffi
 WEBGPU_DIR := $(WGPU_FFI_DIR)/webgpu-headers
 WGPU_ODIN_DIR := $(WGPU_FFI_DIR)/wgpu
+TEMPLATES_DIR := $(WORK_DIR)/templates
 
 WGPU_HEADER := $(WGPU_FFI_DIR)/wgpu.h
 WEBGPU_HEADER := $(WEBGPU_DIR)/webgpu.h
@@ -34,10 +35,10 @@ endif
 ODINGEN := $(WORK_DIR)/odin-gen.exe
 ODIN_FLAGS += $(OCBINDGEN_DIR)/src -out:$(ODINGEN)
 
-TEMPL_FILE := $(WORK_DIR)/bindgen.sjson.templ 
+TEMPL_FILE := $(TEMPLATES_DIR)/bindgen.sjson.templ 
 BINDINGS_OUT := $(WORK_DIR)/bindgen.sjson
 
-ODIN_TEMPL_FILE := $(WORK_DIR)/foreign.odin.templ
+ODIN_TEMPL_FILE := $(TEMPLATES_DIR)/foreign.odin.templ
 ODIN_FOREIGN_OUT := $(WORK_DIR)/foreign.odin
 
 .PHONY: all submodule odin-template json-template template bindgen wgpu-lib clean
