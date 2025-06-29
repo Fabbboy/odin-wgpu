@@ -8,4 +8,7 @@ package_name = "wgpu"
 
 force_ada_case_types = true
 
-clang_include_path = "@WEBPU_DIR@"
+clang_include_paths = [
+  "@WGPU_FFI_DIR@",
+  "@WEBPU_DIR@"
+]

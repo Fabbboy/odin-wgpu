@@ -31,7 +31,8 @@ $(ODINGEN): $(OCBINDGEN_DIR)
 template: $(TEMPL_FILE) $(WGPU_HEADER) $(WEBGPU_HEADER)
 	$(SED) -e 's|@WGPU_HEADER@|$(WGPU_HEADER)|g' \
 		-e 's|@WEBGPU_HEADER@|$(WEBGPU_HEADER)|g' \
-		-e 's|@WEBPU_DIR@|$(WBGPU_DIR)|g' \
+		-e 's|@WGPU_FFI_DIR@|$(WGPU_FFI_DIR)|g' \
+		-e 's|@WEBPU_DIR@|$(WEBGPU_DIR)|g' \
 		$(TEMPL_FILE) > $(BINDINGS_OUT)
 
 bindgen: $(ODINGEN) $(BINDINGS_OUT)
