@@ -14,8 +14,8 @@ ODIN_FLAGS += $(OCBINDGEN_DIR)/src -out:$(ODINGEN)
 TEMPL_FILE := $(WORK_DIR)/bindgen.sjson.templ 
 BINDINGS_OUT := $(WORK_DIR)/bindgen.sjson
 
-WGPU_HEADER := $(WGPU_DIR)/ffi/wgpu.h
-WEBGPU_HEADER := $(WGPU_DIR)/ffi/webgpu-headers/webgpu.h
+WGPU_HEADER := $(WGPU_DIR)/ffi/
+WEBGPU_HEADER := $(WGPU_DIR)/ffi/webgpu-headers
 
 .PHONY: all submodule template bindgen clean
 
