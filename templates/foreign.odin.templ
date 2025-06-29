@@ -1,10 +1,10 @@
-/**when ODIN_OS == .Linux {
+when ODIN_OS == .Linux {
   foreign import lib "@LIB_FILE@"
 } else when ODIN_OS == .Darwin || ODIN_OS == .FreeBSD || ODIN_OS == .OpenBSD {
   foreign import lib "@LIB_FILE@"
 } else when ODIN_OS == .Windows {
   foreign import lib "@LIB_FILE@"
-}*/
+}
 
 /**
 when ODIN_OS == .Linux {
@@ -15,5 +15,3 @@ when ODIN_OS == .Linux {
   foreign import lib "wgpu_native.lib"
 }
 */
-
-foreign import lib "wgpu_native"
