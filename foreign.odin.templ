@@ -1,0 +1,7 @@
+when ODIN_OS == "linux" {
+  foreign import lib "@LIB_FILE@"
+} else when ODIN_OS == "macos" {
+  foreign import lib "@LIB_FILE@"
+} else when ODIN_OS == "windows" {
+  foreign import lib "@LIB_FILE@"
+}
