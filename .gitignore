@@ -3,6 +3,7 @@
 *.bin
 
 foreign.odin
+wgpu/
 
 # Generated files
 *.sjson
